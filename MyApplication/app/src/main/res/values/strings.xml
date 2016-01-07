@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Beep-Beep</string>
+    <string name="title_activity_level_difficulty">LevelDifficulty</string>
 </resources>

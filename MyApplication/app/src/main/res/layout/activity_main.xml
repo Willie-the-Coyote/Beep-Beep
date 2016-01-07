@@ -24,6 +24,7 @@
         android:width="150dp"
         android:text="START"
         android:textColor="#f6cb97"
+        android:onClick="loadLevelDifficulty"
         android:background="@drawable/samplebutton" />
 
 </RelativeLayout>
