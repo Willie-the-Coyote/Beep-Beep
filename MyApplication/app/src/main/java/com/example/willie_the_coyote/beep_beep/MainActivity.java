@@ -17,7 +17,7 @@ public class MainActivity extends AppCompatActivity {
 
     public void loadLevelDifficulty(View view) {
         Intent intent;
-        intent = new Intent(this, LevelDifficulty.class);
+        intent = new Intent(this, ChooseLevel.class);
        startActivity(intent);
     }
 }
