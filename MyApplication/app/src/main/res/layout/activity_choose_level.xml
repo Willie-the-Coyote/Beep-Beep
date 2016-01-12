@@ -13,14 +13,14 @@
     <LinearLayout
         android:id="@+id/ll_title_choose_level"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" >
+        android:layout_height="wrap_content">
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:text="@string/choose_level_title"
             android:textAlignment="center"
-            android:text="Choose\n Level"
-            android:textSize="45dp" />
+            android:textSize="@dimen/choose_level_title_text_size" />
     </LinearLayout>
 
     <LinearLayout
@@ -30,124 +30,64 @@
         android:layout_below="@id/ll_title_choose_level"
         android:orientation="vertical">
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:orientation="horizontal">
-
+        <LinearLayout style="@style/LevelsLayout">
             <ImageButton
                 android:id="@+id/button1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:adjustViewBounds="true"
-                android:background="@null"
-                android:maxHeight="120dp"
-                android:maxWidth="120dp"
-                android:src="@drawable/box0" />
+                android:src="@drawable/box0"
+                style="@style/LevelButtons"
+                android:contentDescription="@string/level_one"/>
 
             <ImageButton
                 android:id="@+id/button2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:adjustViewBounds="true"
-                android:background="@null"
-                android:maxHeight="120dp"
-                android:maxWidth="120dp"
-                android:src="@drawable/box1" />
+                android:src="@drawable/box1"
+                style="@style/LevelButtons"
+                android:contentDescription="@string/level_two"/>
 
             <ImageButton
                 android:id="@+id/button3"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:adjustViewBounds="true"
-                android:background="@null"
-                android:maxHeight="120dp"
-                android:maxWidth="120dp"
-                android:src="@drawable/box2" />
+                android:src="@drawable/box2"
+                style="@style/LevelButtons"
+                android:contentDescription="@string/level_three"/>
         </LinearLayout>
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:orientation="horizontal">
-
+        <LinearLayout style="@style/LevelsLayout">
             <ImageButton
                 android:id="@+id/button4"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:adjustViewBounds="true"
-                android:background="@null"
-                android:maxHeight="120dp"
-                android:maxWidth="120dp"
-                android:src="@drawable/box3" />
+                android:src="@drawable/box3"
+                style="@style/LevelButtons"
+                android:contentDescription="@string/level_four"/>
 
             <ImageButton
                 android:id="@+id/button5"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:adjustViewBounds="true"
-                android:background="@null"
-                android:maxHeight="120dp"
-                android:maxWidth="120dp"
-                android:src="@drawable/box4" />
+                android:src="@drawable/box4"
+                style="@style/LevelButtons"
+                android:contentDescription="@string/level_five"/>
 
             <ImageButton
                 android:id="@+id/button6"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:adjustViewBounds="true"
-                android:background="@null"
-                android:maxHeight="120dp"
-                android:maxWidth="120dp"
-                android:src="@drawable/box5" />
+                android:src="@drawable/box5"
+                style="@style/LevelButtons"
+                android:contentDescription="@string/lelvel_six"/>
         </LinearLayout>
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:orientation="horizontal">
-
+        <LinearLayout style="@style/LevelsLayout">
             <ImageButton
                 android:id="@+id/button7"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:adjustViewBounds="true"
-                android:background="@null"
-                android:maxHeight="120dp"
-                android:maxWidth="120dp"
-                android:src="@drawable/box6" />
+                android:src="@drawable/box6"
+                style="@style/LevelButtons"
+                android:contentDescription="@string/level_seven"/>
 
             <ImageButton
                 android:id="@+id/button8"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:adjustViewBounds="true"
-                android:background="@null"
-                android:maxHeight="120dp"
-                android:maxWidth="120dp"
-                android:src="@drawable/box7" />
+                android:src="@drawable/box7"
+                style="@style/LevelButtons"
+                android:contentDescription="@string/lelvel_eight"/>
 
             <ImageButton
                 android:id="@+id/button9"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:adjustViewBounds="true"
-                android:background="@null"
-                android:maxHeight="120dp"
-                android:maxWidth="120dp"
-                android:src="@drawable/box8" />
+                android:src="@drawable/box8"
+                style="@style/LevelButtons"
+                android:contentDescription="@string/level_nine"/>
         </LinearLayout>
     </LinearLayout>
 </RelativeLayout>

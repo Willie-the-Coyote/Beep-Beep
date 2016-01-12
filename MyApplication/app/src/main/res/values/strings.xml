@@ -1,4 +1,14 @@
 <resources>
     <string name="app_name">Beep-Beep</string>
     <string name="title_activity_level_difficulty">LevelDifficulty</string>
+    <string name="choose_level_title">Choose\n Level</string>
+    <string name="level_one">Level one</string>
+    <string name="level_two">Level two</string>
+    <string name="level_three">Level three</string>
+    <string name="level_four">Level four</string>
+    <string name="level_five">Level five</string>
+    <string name="lelvel_six">Level six</string>
+    <string name="level_seven">Level seven</string>
+    <string name="lelvel_eight">Level eight</string>
+    <string name="level_nine">Level nine</string>
 </resources>
