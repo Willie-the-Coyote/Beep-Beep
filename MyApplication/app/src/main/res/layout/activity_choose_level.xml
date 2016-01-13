@@ -20,6 +20,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/choose_level_title"
+            android:textColor="#505b0e"
             android:textAlignment="center"
             android:textSize="@dimen/choose_level_title_text_size" />
     </LinearLayout>
