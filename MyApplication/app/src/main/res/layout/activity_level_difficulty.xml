@@ -10,73 +10,35 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.example.willie_the_coyote.beep_beep.LevelDifficulty">
 
-
-    <!--<ImageView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:contentDescription="kolche"
-        android:src="@drawable/stick" />-->
-
     <LinearLayout
-        android:layout_centerInParent="true"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical" >
+        android:layout_centerInParent="true"
+        android:orientation="vertical">
 
         <ImageButton
-            android:layout_width="match_parent"
+            style="@style/ArrowButtons"
             android:onClick="loadChooseLevel"
-            android:layout_height="wrap_content"
-            android:adjustViewBounds="true"
-            android:maxWidth="200dp"
-            android:maxHeight="100dp"
-            android:scaleType="fitCenter"
-            android:background="@null"
             android:src="@drawable/tabela1" />
 
         <ImageButton
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            style="@style/ArrowButtons"
             android:onClick="loadChooseLevel"
-            android:adjustViewBounds="true"
-            android:maxWidth="200dp"
-            android:maxHeight="100dp"
-            android:scaleType="fitCenter"
-            android:background="@null"
             android:src="@drawable/tabela2" />
 
         <ImageButton
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            style="@style/ArrowButtons"
             android:onClick="loadChooseLevel"
-            android:adjustViewBounds="true"
-            android:maxWidth="200dp"
-            android:maxHeight="100dp"
-            android:scaleType="fitCenter"
-            android:background="@null"
             android:src="@drawable/tablela3" />
 
         <ImageButton
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            style="@style/ArrowButtons"
             android:onClick="loadChooseLevel"
-            android:adjustViewBounds="true"
-            android:maxWidth="200dp"
-            android:maxHeight="100dp"
-            android:scaleType="fitCenter"
-            android:background="@null"
             android:src="@drawable/tabela4" />
 
         <ImageButton
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            style="@style/ArrowButtons"
             android:onClick="loadChooseLevel"
-            android:adjustViewBounds="true"
-            android:maxWidth="200dp"
-            android:maxHeight="100dp"
-            android:scaleType="fitCenter"
-            android:background="@null"
             android:src="@drawable/tabela5" />
     </LinearLayout>
-
 </RelativeLayout>

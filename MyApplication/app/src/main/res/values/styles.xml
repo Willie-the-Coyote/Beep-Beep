@@ -8,7 +8,6 @@
     </style>
     <style name="AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
     <style name="PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
-
     <style name="LevelButtons">
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
@@ -24,7 +23,15 @@
         <item name="android:layout_weight">1</item>
         <item name="android:orientation">horizontal</item>
     </style>
-
+    <style name="ArrowButtons">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:adjustViewBounds">true</item>
+        <item name="android:maxWidth">@dimen/arrow_button_max_width</item>
+        <item name="android:maxHeight">@dimen/arrow_button_max_height</item>
+        <item name="android:scaleType">fitCenter</item>
+        <item name="android:background">@null</item>
+    </style>
 </resources>
 
 
