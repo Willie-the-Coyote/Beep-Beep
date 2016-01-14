@@ -37,6 +37,7 @@
                 android:id="@+id/button1"
                 android:src="@drawable/box0"
                 style="@style/LevelButtons"
+                android:onClick="loadLevel"
                 android:contentDescription="@string/level_one"/>
 
             <ImageButton
