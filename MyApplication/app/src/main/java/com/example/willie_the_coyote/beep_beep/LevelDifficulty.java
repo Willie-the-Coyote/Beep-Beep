@@ -1,7 +1,6 @@
 package com.example.willie_the_coyote.beep_beep;
 
 import android.content.Intent;
-import android.graphics.Path;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -14,8 +13,8 @@ public class LevelDifficulty extends AppCompatActivity {
         setContentView(R.layout.activity_level_difficulty);
     }
 
-    public void loadChooseLevel2x2(View view){
-       attachDifficultyInfo("2");
+    public void loadChooseLevel2x2(View view) {
+        attachDifficultyInfo("2");
     }
 
     public void loadChooseLevel3x3(View view) {
@@ -30,7 +29,7 @@ public class LevelDifficulty extends AppCompatActivity {
         attachDifficultyInfo("5");
     }
 
-    public void attachDifficultyInfo(String difficulty){
+    public void attachDifficultyInfo(String difficulty) {
         Intent intent;
         intent = new Intent(this, ChooseLevel.class);
         intent.putExtra("diff", difficulty);

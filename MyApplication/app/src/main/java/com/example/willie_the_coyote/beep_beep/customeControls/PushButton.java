@@ -8,7 +8,7 @@ import android.view.MotionEvent;
 import android.widget.Button;
 
 import com.example.willie_the_coyote.beep_beep.ChooseLevel;
-import com.example.willie_the_coyote.beep_beep.GameActivity;
+//import com.example.willie_the_coyote.beep_beep.GameActivity;
 
 import java.util.ArrayList;
 
@@ -37,8 +37,8 @@ public class PushButton extends Button {
             switch (event.getActionMasked()) {
                 case MotionEvent.ACTION_DOWN:
                     this.setPressed(false);
-                        this.setPressed(false);
-                        wordCombo.remove(this.getText().toString());
+                    this.setPressed(false);
+                    wordCombo.remove(this.getText().toString());
 
                 case MotionEvent.ACTION_UP:
                     return true;
@@ -52,7 +52,7 @@ public class PushButton extends Button {
                     this.performClick();
 
                 case MotionEvent.ACTION_UP:
-                        return false;
+                    return false;
             }
 
             return true;
@@ -60,6 +60,6 @@ public class PushButton extends Button {
 
         return false;
     }
-
-
 }
+
+

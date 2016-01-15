@@ -1,102 +1,80 @@
-package com.example.willie_the_coyote.beep_beep;
-
-import android.content.Intent;
-import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentTransaction;
-import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
-import android.view.MotionEvent;
-import android.view.View;
-import android.widget.Button;
-
-import com.example.willie_the_coyote.beep_beep.Fragments.GameBoards.GameBoard2x2;
-import com.example.willie_the_coyote.beep_beep.Interfaces.IFragmentChangeListener;
-import com.example.willie_the_coyote.beep_beep.customeControls.PushButton;
-
-import java.util.ArrayList;
-
-public class GameActivity extends AppCompatActivity implements View.OnTouchListener, IFragmentChangeListener {
-
-
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_game);
-
-        Intent intent = getIntent();
-        String boardString = intent.getStringExtra("board");
-
-
-        switch (boardString) {
-            case "1":
-                GameBoard2x2 gameBoard2x2 = new GameBoard2x2();
-                replaceFragment(gameBoard2x2);
-                break;
-        }
-    }
-
-//    private void onGameLoad() {
-//        for(int i= 0; i < games.size(); i++){
-//            button1.setText(games.get(i).getLetter1());
-//            button2.setText(games.get(i).getLetter2());
-//            button3.setText(games.get(i).getLetter3());
-//            button4.setText(games.get(i).getLetter4());
+//package com.example.willie_the_coyote.beep_beep;
 //
+//import android.support.v7.app.AppCompatActivity;
+//import android.os.Bundle;
+//import android.view.MotionEvent;
+//import android.view.View;
+//import android.widget.Button;
+//
+//import com.example.willie_the_coyote.beep_beep.Fragments.GameBoards.GameBoard2x2;
+//import com.example.willie_the_coyote.beep_beep.Interfaces.IFragmentChangeListener;
+//import com.example.willie_the_coyote.beep_beep.customeControls.PushButton;
+//
+//import java.util.ArrayList;
+//
+//public class GameActivity extends AppCompatActivity implements View.OnTouchListener {
+//
+//
+//    @Override
+//    protected void onCreate(Bundle savedInstanceState) {
+//        super.onCreate(savedInstanceState);
+//        setContentView(R.layout.activity_game);
+//    }
+//
+////    private void onGameLoad() {
+////        for(int i= 0; i < games.size(); i++){
+////            button1.setText(games.get(i).getLetter1());
+////            button2.setText(games.get(i).getLetter2());
+////            button3.setText(games.get(i).getLetter3());
+////            button4.setText(games.get(i).getLetter4());
+////
+////        }
+////    }
+//
+////    public View.OnTouchListener getTouchListener() {
+////        return new View.OnTouchListener() {
+////            @Override
+////            public boolean onTouch(View v, MotionEvent event) {
+////                switch (event.getAction()) {
+////                    case MotionEvent.ACTION_DOWN:
+////                        if (button1.isPressed()) {
+////                            button1.setPressed(true);
+////                        } else if (button2.isPressed()) {
+////                            button2.setPressed(true);
+////                        } else if (button3.isPressed()) {
+////                            button3.setPressed(true);
+////                        } else if (button4.isPressed()) {
+////                            button4.setPressed(true);
+////                        }
+////                        return true;
+////
+////                    case MotionEvent.ACTION_MOVE:
+////                        if (button1.isPressed()) {
+////                            button1.setPressed(true);
+////                        } else if (button2.isPressed()) {
+////                            button2.setPressed(true);
+////                        } else if (button3.isPressed()) {
+////                            button3.setPressed(true);
+////                        } else if (button4.isPressed()) {
+////                            button4.setPressed(true);
+////                        }
+////                        break;
+////                    case MotionEvent.ACTION_UP:
+////                        return true;
+////                    default:
+////                        return false;
+////                }
+////
+////                return true;
+////            }
+////        };
+////    }
+//
+//    @Override
+//    public boolean onTouch(View v, MotionEvent event) {
+//        switch (event.getActionMasked()) {
+//            case MotionEvent.ACTION_MOVE:
 //        }
+//        return true;
 //    }
-
-//    public View.OnTouchListener getTouchListener() {
-//        return new View.OnTouchListener() {
-//            @Override
-//            public boolean onTouch(View v, MotionEvent event) {
-//                switch (event.getAction()) {
-//                    case MotionEvent.ACTION_DOWN:
-//                        if (button1.isPressed()) {
-//                            button1.setPressed(true);
-//                        } else if (button2.isPressed()) {
-//                            button2.setPressed(true);
-//                        } else if (button3.isPressed()) {
-//                            button3.setPressed(true);
-//                        } else if (button4.isPressed()) {
-//                            button4.setPressed(true);
-//                        }
-//                        return true;
-//
-//                    case MotionEvent.ACTION_MOVE:
-//                        if (button1.isPressed()) {
-//                            button1.setPressed(true);
-//                        } else if (button2.isPressed()) {
-//                            button2.setPressed(true);
-//                        } else if (button3.isPressed()) {
-//                            button3.setPressed(true);
-//                        } else if (button4.isPressed()) {
-//                            button4.setPressed(true);
-//                        }
-//                        break;
-//                    case MotionEvent.ACTION_UP:
-//                        return true;
-//                    default:
-//                        return false;
-//                }
-//
-//                return true;
-//            }
-//        };
-//    }
-
-    @Override
-    public boolean onTouch(View v, MotionEvent event) {
-        switch (event.getActionMasked()) {
-            case MotionEvent.ACTION_MOVE:
-        }
-        return true;
-    }
-
-    @Override
-    public void replaceFragment(Fragment fragment) {
-        FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
-        transaction.replace(R.id.fragment_game_board_container, fragment);
-        transaction.addToBackStack(null);
-        transaction.commit();
-    }
-}
+//}
