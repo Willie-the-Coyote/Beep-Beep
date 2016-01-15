@@ -10,55 +10,12 @@
     tools:context="com.example.willie_the_coyote.beep_beep.GameActivity"
     android:background="@drawable/rocks_background">
 
-    <GridLayout
-        android:id="@+id/gridview"
+    <fragment
+        android:name="com.example.willie_the_coyote.beep_beep.Fragments.GameBoards.GameBoard2x2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:columnCount="2"
-        android:rowCount="2"
+        android:id="@+id/fragment_game_board_container"
         android:layout_centerVertical="true"
-        android:layout_centerHorizontal="true">
-
-        <com.example.willie_the_coyote.beep_beep.customeControls.PushButton
-            android:onClick="addLetter"
-            android:id="@+id/Tile1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="@drawable/tile"
-            android:layout_column="0"
-            android:layout_row="0"
-            />
-        <com.example.willie_the_coyote.beep_beep.customeControls.PushButton
-            android:onClick="addLetter"
-            android:id="@+id/Tile2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="@drawable/tile"
-            android:layout_row="1"
-            android:layout_column="0"/>
-        <com.example.willie_the_coyote.beep_beep.customeControls.PushButton
-            android:onClick="addLetter"
-            android:id="@+id/Tile3"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="@drawable/tile"
-            android:layout_row="0"
-            android:layout_column="1"/>
-        <com.example.willie_the_coyote.beep_beep.customeControls.PushButton
-            android:onClick="addLetter"
-            android:id="@+id/Tile4"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="@drawable/tile"
-            android:layout_row="1"
-            android:layout_column="1"/>
-    </GridLayout>
-
-    <TextView
-        android:id="@+id/tv_wordAttempt"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background="@android:color/holo_purple"
-        android:editable="true"
-        android:gravity="bottom" />
+        android:layout_centerHorizontal="true"
+        tools:layout="@layout/fragment_game_board2x2"/>
 </RelativeLayout>

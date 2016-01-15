@@ -15,28 +15,25 @@ public class LevelDifficulty extends AppCompatActivity {
     }
 
     public void loadChooseLevel2x2(View view){
-       attachDifficultyInfo("2x2");
+       attachDifficultyInfo("2");
     }
 
     public void loadChooseLevel3x3(View view) {
-        attachDifficultyInfo("3x3");
+        attachDifficultyInfo("3");
     }
 
     public void loadChooseLevel4x4(View view) {
-        attachDifficultyInfo("4x4");
+        attachDifficultyInfo("4");
     }
 
     public void loadChooseLevel5x5(View view) {
-        attachDifficultyInfo("5x5");
+        attachDifficultyInfo("5");
     }
 
     public void attachDifficultyInfo(String difficulty){
         Intent intent;
         intent = new Intent(this, ChooseLevel.class);
-        String frag = "2x2";
         intent.putExtra("diff", difficulty);
         startActivity(intent);
     }
-
-
 }

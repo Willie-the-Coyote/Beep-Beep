@@ -1,14 +1,34 @@
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:id="@+id/choose_lvl_2x2"
-    tools:context="com.example.willie_the_coyote.beep_beep.Fragments.ChooseLevel2x2">
+    android:background="@drawable/rocks_background"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="com.example.willie_the_coyote.beep_beep.choose_level">
+
+    <LinearLayout
+        android:id="@+id/ll_title_choose_level"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/tv_attempt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/choose_level_title"
+            android:textAlignment="center"
+            android:textColor="#505b0e"
+            android:textSize="@dimen/choose_level_title_text_size" />
+    </LinearLayout>
 
     <LinearLayout
         android:id="@+id/ll_levels"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_below="@id/ll_title_choose_level"
         android:orientation="vertical">
 
         <LinearLayout style="@style/LevelsLayout">
@@ -23,12 +43,14 @@
                 android:id="@+id/button2"
                 android:src="@drawable/box1"
                 style="@style/LevelButtons"
+                android:onClick="loadLevel"
                 android:contentDescription="@string/level_two"/>
 
             <ImageButton
                 android:id="@+id/button3"
                 android:src="@drawable/box2"
                 style="@style/LevelButtons"
+                android:onClick="loadLevel"
                 android:contentDescription="@string/level_three"/>
         </LinearLayout>
 
@@ -37,18 +59,21 @@
                 android:id="@+id/button4"
                 android:src="@drawable/box3"
                 style="@style/LevelButtons"
+                android:onClick="loadLevel"
                 android:contentDescription="@string/level_four"/>
 
             <ImageButton
                 android:id="@+id/button5"
                 android:src="@drawable/box4"
                 style="@style/LevelButtons"
+                android:onClick="loadLevel"
                 android:contentDescription="@string/level_five"/>
 
             <ImageButton
                 android:id="@+id/button6"
                 android:src="@drawable/box5"
                 style="@style/LevelButtons"
+                android:onClick="loadLevel"
                 android:contentDescription="@string/lelvel_six"/>
         </LinearLayout>
 
@@ -57,20 +82,23 @@
                 android:id="@+id/button7"
                 android:src="@drawable/box6"
                 style="@style/LevelButtons"
+                android:onClick="loadLevel"
                 android:contentDescription="@string/level_seven"/>
 
             <ImageButton
                 android:id="@+id/button8"
                 android:src="@drawable/box7"
                 style="@style/LevelButtons"
+                android:onClick="loadLevel"
                 android:contentDescription="@string/lelvel_eight"/>
 
             <ImageButton
                 android:id="@+id/button9"
                 android:src="@drawable/box8"
                 style="@style/LevelButtons"
+                android:onClick="loadLevel"
                 android:contentDescription="@string/level_nine"/>
         </LinearLayout>
     </LinearLayout>
-</FrameLayout>
 
+</RelativeLayout>

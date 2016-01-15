@@ -9,9 +9,6 @@ import android.view.ViewGroup;
 
 import com.example.willie_the_coyote.beep_beep.R;
 
-/**
- * A simple {@link Fragment} subclass.
- */
 public class ChooseLevel2x2 extends Fragment {
 
 
