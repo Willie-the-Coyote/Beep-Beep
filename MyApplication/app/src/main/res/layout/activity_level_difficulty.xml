@@ -18,12 +18,12 @@
 
         <ImageButton
             style="@style/ArrowButtons"
-            android:onClick="loadChooseLevel"
+            android:onClick="loadChooseLevel2x2"
             android:src="@drawable/tabela1" />
 
         <ImageButton
             style="@style/ArrowButtons"
-            android:onClick="loadChooseLevel"
+            android:onClick="loadChooseLevel3x3"
             android:src="@drawable/tabela2" />
 
         <ImageButton

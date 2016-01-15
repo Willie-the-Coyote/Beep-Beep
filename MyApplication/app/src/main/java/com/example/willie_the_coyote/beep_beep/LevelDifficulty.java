@@ -14,11 +14,19 @@ public class LevelDifficulty extends AppCompatActivity {
         setContentView(R.layout.activity_level_difficulty);
     }
 
-    public void loadChooseLevel(View view){
+    public void loadChooseLevel2x2(View view){
+       attachDifficultyInfo("2x2");
+    }
+
+    public void loadChooseLevel3x3(View view) {
+        attachDifficultyInfo("3x3");
+    }
+
+    public void attachDifficultyInfo(String difficulty){
         Intent intent;
         intent = new Intent(this, ChooseLevel.class);
         String frag = "2x2";
-        intent.putExtra("diff", frag);
+        intent.putExtra("diff", difficulty);
         startActivity(intent);
     }
 }
