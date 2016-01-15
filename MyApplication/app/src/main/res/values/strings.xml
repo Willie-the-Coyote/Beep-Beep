@@ -11,4 +11,7 @@
     <string name="level_seven">Level seven</string>
     <string name="lelvel_eight">Level eight</string>
     <string name="level_nine">Level nine</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

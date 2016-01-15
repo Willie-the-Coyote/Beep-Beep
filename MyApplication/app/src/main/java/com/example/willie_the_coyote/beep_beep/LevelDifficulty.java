@@ -17,6 +17,8 @@ public class LevelDifficulty extends AppCompatActivity {
     public void loadChooseLevel(View view){
         Intent intent;
         intent = new Intent(this, ChooseLevel.class);
+        String frag = "2x2";
+        intent.putExtra("diff", frag);
         startActivity(intent);
     }
 }
