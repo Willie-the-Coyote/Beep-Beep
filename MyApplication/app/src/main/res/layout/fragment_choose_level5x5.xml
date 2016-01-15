@@ -2,7 +2,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:id="@+id/choose_lvl_3x3"
+    android:id="@+id/choose_lvl_5x5"
     tools:context="com.example.willie_the_coyote.beep_beep.Fragments.ChooseLevel2x2">
 
     <LinearLayout
@@ -14,7 +14,7 @@
         <LinearLayout style="@style/LevelsLayout">
             <ImageButton
                 android:id="@+id/button1"
-                android:src="@drawable/box3"
+                android:src="@drawable/box5"
                 style="@style/LevelButtons"
                 android:contentDescription="@string/level_one"/>
 

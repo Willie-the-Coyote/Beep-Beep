@@ -33,7 +33,7 @@
 
         <ImageButton
             style="@style/ArrowButtons"
-            android:onClick="loadChooseLevel"
+            android:onClick="loadChooseLevel5x5"
             android:src="@drawable/tabela4" />
 
         <ImageButton

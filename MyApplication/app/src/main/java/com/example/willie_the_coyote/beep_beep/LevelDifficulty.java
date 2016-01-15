@@ -26,6 +26,10 @@ public class LevelDifficulty extends AppCompatActivity {
         attachDifficultyInfo("4x4");
     }
 
+    public void loadChooseLevel5x5(View view) {
+        attachDifficultyInfo("5x5");
+    }
+
     public void attachDifficultyInfo(String difficulty){
         Intent intent;
         intent = new Intent(this, ChooseLevel.class);
@@ -33,4 +37,6 @@ public class LevelDifficulty extends AppCompatActivity {
         intent.putExtra("diff", difficulty);
         startActivity(intent);
     }
+
+
 }

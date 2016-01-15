@@ -13,6 +13,7 @@ import android.widget.TextView;
 import com.example.willie_the_coyote.beep_beep.Fragments.ChooseLevel2x2;
 import com.example.willie_the_coyote.beep_beep.Fragments.ChooseLevel3x3;
 import com.example.willie_the_coyote.beep_beep.Fragments.ChooseLevel4x4;
+import com.example.willie_the_coyote.beep_beep.Fragments.ChooseLevel5x5;
 import com.example.willie_the_coyote.beep_beep.Interfaces.IFragmentChangeListener;
 
 
@@ -43,6 +44,11 @@ public class ChooseLevel extends AppCompatActivity implements IFragmentChangeLis
             case "4x4":
                 ChooseLevel4x4 frag4x4 = new ChooseLevel4x4();
                 replaceFragment(frag4x4);
+                break;
+
+            case "5x5":
+                ChooseLevel5x5 frag5x5 = new ChooseLevel5x5();
+                replaceFragment(frag5x5);
                 break;
         }
     }
