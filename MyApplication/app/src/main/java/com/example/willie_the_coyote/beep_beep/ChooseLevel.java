@@ -12,13 +12,11 @@ import android.widget.TextView;
 
 import com.example.willie_the_coyote.beep_beep.Fragments.ChooseLevel2x2;
 import com.example.willie_the_coyote.beep_beep.Fragments.ChooseLevel3x3;
+import com.example.willie_the_coyote.beep_beep.Fragments.ChooseLevel4x4;
 import com.example.willie_the_coyote.beep_beep.Interfaces.IFragmentChangeListener;
 
 
 public class ChooseLevel extends AppCompatActivity implements IFragmentChangeListener {
-
-//    private static final String DETAILFRAGMENT_TAG = "PESHO";
-//    ChooseLevel2x2 fragment = new ChooseLevel2x2();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,15 +31,18 @@ public class ChooseLevel extends AppCompatActivity implements IFragmentChangeLis
 
         switch (difficultyString) {
             case "2x2":
-                // Create new fragment and transaction
                 ChooseLevel2x2 frag2x2 = new ChooseLevel2x2();
                 replaceFragment(frag2x2);
                 break;
 
             case "3x3":
-                // Create new fragment and transaction
                 ChooseLevel3x3 frag3x3 = new ChooseLevel3x3();
                 replaceFragment(frag3x3);
+                break;
+
+            case "4x4":
+                ChooseLevel4x4 frag4x4 = new ChooseLevel4x4();
+                replaceFragment(frag4x4);
                 break;
         }
     }

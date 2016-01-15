@@ -30,5 +30,5 @@
         android:layout_height="match_parent"
         android:id="@+id/fragment_level_grid_container"
         android:layout_below="@id/ll_title_choose_level"
-        tools:layout="@layout/fragment_choose_level2x2"/>
+        tools:layout="@layout/activity_level_difficulty"/>
 </RelativeLayout>
