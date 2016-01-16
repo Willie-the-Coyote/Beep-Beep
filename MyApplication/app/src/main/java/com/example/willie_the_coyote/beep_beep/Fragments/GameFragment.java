@@ -1,7 +1,6 @@
 package com.example.willie_the_coyote.beep_beep.Fragments;
 
 import android.annotation.TargetApi;
-import android.graphics.drawable.Drawable;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -21,7 +20,7 @@ public class GameFragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        rootView = (View) inflater.inflate(R.layout.fragment_game_board2x2, container, false);
+        rootView = (View) inflater.inflate(R.layout.fragment_game_board, container, false);
 
         int dificulty = getArguments().getInt(ChooseLevel.DIFICULTY_LEVEL);
         generateGrid(dificulty);

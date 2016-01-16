@@ -8,4 +8,8 @@
     <dimen name="choose_level_title_text_size">45sp</dimen>
     <dimen name="arrow_button_max_width">200dp</dimen>
     <dimen name="arrow_button_max_height">100dp</dimen>
+    <dimen name="start_button_padding">10dp</dimen>
+    <dimen name="start_button_margin_bottom">105dp</dimen>
+    <dimen name="start_button_margin_left">20dp</dimen>
+    <dimen name="start_button_width">150dp</dimen>
 </resources>

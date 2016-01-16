@@ -79,7 +79,7 @@
 ////        button3.setOnTouchListener(listener);
 ////        button4.setOnTouchListener(listener);
 //
-//        return inflater.inflate(R.layout.fragment_game_board2x2, container, false);
+//        return inflater.inflate(R.layout.fragment_game_board, container, false);
 //
 //
 //    }
