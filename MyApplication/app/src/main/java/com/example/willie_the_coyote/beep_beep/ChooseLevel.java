@@ -9,10 +9,12 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.GridLayout;
+import android.widget.TextView;
 
 import com.example.willie_the_coyote.beep_beep.Fragments.ChooseLevelFragment;
 import com.example.willie_the_coyote.beep_beep.Fragments.GameFragment;
 import com.example.willie_the_coyote.beep_beep.Objects.GameObject;
+import com.example.willie_the_coyote.beep_beep.customeControls.PushButton;
 
 import java.lang.reflect.Array;
 import java.util.ArrayList;
@@ -23,11 +25,11 @@ public class ChooseLevel extends AppCompatActivity {
     public static final int CURRRENT_PAGE = 1;
 
 
-
     private int difficulty;
     private ViewPager viewPager;
     private FragmentPagerAdapter adapter;
-    private ArrayList<GameObject> levels = new ArrayList<GameObject>();
+    public static ArrayList<GameObject> levels = new ArrayList<GameObject>();
+
     private GameObject game1 = new GameObject(1, new ArrayList<String>(Arrays.asList("S", "T", "A", "L")), new ArrayList<String>(Arrays.asList("SALT")), 2);
     private GameObject game2 = new GameObject(2, new ArrayList<String>(Arrays.asList("C", "H", "I", "N")), new ArrayList<String>(Arrays.asList("CHIN")), 2);
     private GameObject game3 = new GameObject(3, new ArrayList<String>(Arrays.asList("S", "T", "A", "L")), new ArrayList<String>(Arrays.asList("SALT")), 2);
@@ -62,7 +64,7 @@ public class ChooseLevel extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_choose_level);
-        levels.addAll(Arrays.asList(game1,game2, game3, game4, game5, game6, game7, game8, game9,game11,game12, game13, game14, game15, game16, game17, game18, game19,game21,game22, game23, game24, game25, game26, game27, game28, game29));
+        levels.addAll(Arrays.asList(game1, game2, game3, game4, game5, game6, game7, game8, game9, game11, game12, game13, game14, game15, game16, game17, game18, game19, game21, game22, game23, game24, game25, game26, game27, game28, game29));
         GridLayout grid = (GridLayout) findViewById(R.id.gridview);
 
         Intent intent = getIntent();
@@ -73,65 +75,73 @@ public class ChooseLevel extends AppCompatActivity {
         viewPager.setAdapter(adapter);
     }
 
-    public void loadLevel1(View view){
+    public void loadLevel1(View view) {
         int id = 1;
-        GameObject  current = loadNeededLevel(difficulty, id);
+        GameObject current = loadNeededLevel(difficulty, id);
         populateButtons(current);
 
         viewPager.setCurrentItem(CURRRENT_PAGE);
     }
-    public void loadLevel2(View view){
+
+    public void loadLevel2(View view) {
         int id = 2;
-        GameObject  current = loadNeededLevel(difficulty, id);
+        GameObject current = loadNeededLevel(difficulty, id);
         populateButtons(current);
 
         viewPager.setCurrentItem(CURRRENT_PAGE);
     }
-    public void loadLevel3(View view){
+
+    public void loadLevel3(View view) {
         int id = 3;
-        GameObject  current = loadNeededLevel(difficulty, id);
+        GameObject current = loadNeededLevel(difficulty, id);
         populateButtons(current);
 
         viewPager.setCurrentItem(CURRRENT_PAGE);
     }
-    public void loadLevel4(View view){
+
+    public void loadLevel4(View view) {
         int id = 4;
-        GameObject  current = loadNeededLevel(difficulty, id);
+        GameObject current = loadNeededLevel(difficulty, id);
         populateButtons(current);
 
         viewPager.setCurrentItem(CURRRENT_PAGE);
     }
-    public void loadLevel5(View view){
+
+    public void loadLevel5(View view) {
         int id = 5;
-        GameObject  current = loadNeededLevel(difficulty, id);
+        GameObject current = loadNeededLevel(difficulty, id);
         populateButtons(current);
 
         viewPager.setCurrentItem(CURRRENT_PAGE);
     }
-    public void loadLevel6(View view){
+
+    public void loadLevel6(View view) {
         int id = 6;
-        GameObject  current = loadNeededLevel(difficulty, id);
+        GameObject current = loadNeededLevel(difficulty, id);
         populateButtons(current);
 
         viewPager.setCurrentItem(CURRRENT_PAGE);
     }
-    public void loadLevel7(View view){
+
+    public void loadLevel7(View view) {
         int id = 7;
-        GameObject  current = loadNeededLevel(difficulty, id);
+        GameObject current = loadNeededLevel(difficulty, id);
         populateButtons(current);
 
         viewPager.setCurrentItem(CURRRENT_PAGE);
     }
-    public void loadLevel8(View view){
+
+    public void loadLevel8(View view) {
         int id = 8;
-        GameObject  current = loadNeededLevel(difficulty, id);
+        GameObject current = loadNeededLevel(difficulty, id);
         populateButtons(current);
 
         viewPager.setCurrentItem(CURRRENT_PAGE);
     }
-    public void loadLevel9(View view){
+
+    public void loadLevel9(View view) {
         int id = 9;
-        GameObject  current = loadNeededLevel(difficulty, id);
+        GameObject current = loadNeededLevel(difficulty, id);
         populateButtons(current);
 
         viewPager.setCurrentItem(CURRRENT_PAGE);
@@ -142,31 +152,29 @@ public class ChooseLevel extends AppCompatActivity {
         int id = 0;
         //String id = view.getResources().getResourceName(view.getId());
         //int numberLevel = Integer.parseInt(R.id.);
-        GameObject  current = loadNeededLevel(difficulty, id);
+        GameObject current = loadNeededLevel(difficulty, id);
         populateButtons(current);
         viewPager.setCurrentItem(id);
     }
 
-    public void populateButtons(GameObject game){
-        for(int i = 0; i < game.Letters.size(); i++){
+    public void populateButtons(GameObject game) {
+        for (int i = 0; i < game.Letters.size(); i++) {
             GameFragment.buttons.get(i).setText(game.Letters.get(i).toString());
         }
     }
 
-    public GameObject loadNeededLevel(int difficulty, int numberLevel){
+    public GameObject loadNeededLevel(int difficulty, int numberLevel) {
         GameObject current = null;
-        for(int i=0; i < levels.size(); i++){
-            if(levels.get(i).Dificulty == difficulty){
-                if(levels.get(i).Level == numberLevel) {
-                    current =  levels.get(i);
+        for (int i = 0; i < levels.size(); i++) {
+            if (levels.get(i).Dificulty == difficulty) {
+                if (levels.get(i).Level == numberLevel) {
+                    current = levels.get(i);
                     break;
-
                 }
             }
         }
 
         return current;
-
     }
 
     private class ChooseLevelAdapter extends FragmentPagerAdapter {

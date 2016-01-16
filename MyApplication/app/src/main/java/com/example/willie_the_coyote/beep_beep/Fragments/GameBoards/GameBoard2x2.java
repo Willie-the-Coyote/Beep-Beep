@@ -84,24 +84,6 @@
 //
 //    }
 //
-//    public void addLetter(View view){
-//        String w = "";
-//        for(int i=0; i < PushButton.wordCombo.size(); i++)
-//        {
-//            w+= PushButton.wordCombo.get(i).toString();
-//        }
-//        wordAtt.setText("");
-//        wordAtt.setText(w);
-//        if(w.equals(games.get(0).Word)){
 //
-//            for(int i= PushButton.wordCombo.size()-1; i >=0;  i--)
-//            {
-//                PushButton.wordCombo.remove(i);
-//            }
-////            Intent intent = new Intent(this, ChooseLevel.class);
-////            startActivity(intent);
-//            wordAtt.setText("");
-//        }
-//    }
 //
 //}
