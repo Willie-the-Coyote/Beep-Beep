@@ -20,6 +20,9 @@ import java.util.Arrays;
 
 public class ChooseLevel extends AppCompatActivity {
     public static final String DIFICULTY_LEVEL = "DificultyLevel";
+    public static final int CURRRENT_PAGE = 1;
+
+
 
     private int difficulty;
     private ViewPager viewPager;
@@ -75,63 +78,63 @@ public class ChooseLevel extends AppCompatActivity {
         GameObject  current = loadNeededLevel(difficulty, id);
         populateButtons(current);
 
-        viewPager.setCurrentItem(id);
+        viewPager.setCurrentItem(CURRRENT_PAGE);
     }
     public void loadLevel2(View view){
         int id = 2;
         GameObject  current = loadNeededLevel(difficulty, id);
         populateButtons(current);
 
-        viewPager.setCurrentItem(id);
+        viewPager.setCurrentItem(CURRRENT_PAGE);
     }
     public void loadLevel3(View view){
         int id = 3;
         GameObject  current = loadNeededLevel(difficulty, id);
         populateButtons(current);
 
-        viewPager.setCurrentItem(id);
+        viewPager.setCurrentItem(CURRRENT_PAGE);
     }
     public void loadLevel4(View view){
         int id = 4;
         GameObject  current = loadNeededLevel(difficulty, id);
         populateButtons(current);
 
-        viewPager.setCurrentItem(id);
+        viewPager.setCurrentItem(CURRRENT_PAGE);
     }
     public void loadLevel5(View view){
         int id = 5;
         GameObject  current = loadNeededLevel(difficulty, id);
         populateButtons(current);
 
-        viewPager.setCurrentItem(id);
+        viewPager.setCurrentItem(CURRRENT_PAGE);
     }
     public void loadLevel6(View view){
         int id = 6;
         GameObject  current = loadNeededLevel(difficulty, id);
         populateButtons(current);
 
-        viewPager.setCurrentItem(id);
+        viewPager.setCurrentItem(CURRRENT_PAGE);
     }
     public void loadLevel7(View view){
         int id = 7;
         GameObject  current = loadNeededLevel(difficulty, id);
         populateButtons(current);
 
-        viewPager.setCurrentItem(id);
+        viewPager.setCurrentItem(CURRRENT_PAGE);
     }
     public void loadLevel8(View view){
         int id = 8;
         GameObject  current = loadNeededLevel(difficulty, id);
         populateButtons(current);
 
-        viewPager.setCurrentItem(id);
+        viewPager.setCurrentItem(CURRRENT_PAGE);
     }
     public void loadLevel9(View view){
         int id = 9;
         GameObject  current = loadNeededLevel(difficulty, id);
         populateButtons(current);
 
-        viewPager.setCurrentItem(id);
+        viewPager.setCurrentItem(CURRRENT_PAGE);
     }
 
     //public GameObject current;
