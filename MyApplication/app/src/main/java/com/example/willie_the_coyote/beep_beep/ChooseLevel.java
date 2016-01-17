@@ -28,6 +28,7 @@ public class ChooseLevel extends AppCompatActivity {
     private int difficulty;
     private ViewPager viewPager;
     private FragmentPagerAdapter adapter;
+    public static GameObject current;
     public static ArrayList<GameObject> levels = new ArrayList<GameObject>();
 
     private GameObject game1 = new GameObject(1, new ArrayList<String>(Arrays.asList("S", "T", "A", "L")), new ArrayList<String>(Arrays.asList("SALT")), 2);
@@ -77,7 +78,7 @@ public class ChooseLevel extends AppCompatActivity {
 
     public void loadLevel1(View view) {
         int id = 1;
-        GameObject current = loadNeededLevel(difficulty, id);
+        current = loadNeededLevel(difficulty, id);
         populateButtons(current);
 
         viewPager.setCurrentItem(CURRRENT_PAGE);
@@ -85,7 +86,7 @@ public class ChooseLevel extends AppCompatActivity {
 
     public void loadLevel2(View view) {
         int id = 2;
-        GameObject current = loadNeededLevel(difficulty, id);
+        current = loadNeededLevel(difficulty, id);
         populateButtons(current);
 
         viewPager.setCurrentItem(CURRRENT_PAGE);
@@ -93,7 +94,7 @@ public class ChooseLevel extends AppCompatActivity {
 
     public void loadLevel3(View view) {
         int id = 3;
-        GameObject current = loadNeededLevel(difficulty, id);
+        current = loadNeededLevel(difficulty, id);
         populateButtons(current);
 
         viewPager.setCurrentItem(CURRRENT_PAGE);
@@ -101,7 +102,7 @@ public class ChooseLevel extends AppCompatActivity {
 
     public void loadLevel4(View view) {
         int id = 4;
-        GameObject current = loadNeededLevel(difficulty, id);
+        current = loadNeededLevel(difficulty, id);
         populateButtons(current);
 
         viewPager.setCurrentItem(CURRRENT_PAGE);
@@ -109,7 +110,7 @@ public class ChooseLevel extends AppCompatActivity {
 
     public void loadLevel5(View view) {
         int id = 5;
-        GameObject current = loadNeededLevel(difficulty, id);
+        current = loadNeededLevel(difficulty, id);
         populateButtons(current);
 
         viewPager.setCurrentItem(CURRRENT_PAGE);
@@ -117,7 +118,7 @@ public class ChooseLevel extends AppCompatActivity {
 
     public void loadLevel6(View view) {
         int id = 6;
-        GameObject current = loadNeededLevel(difficulty, id);
+        current = loadNeededLevel(difficulty, id);
         populateButtons(current);
 
         viewPager.setCurrentItem(CURRRENT_PAGE);
@@ -125,7 +126,7 @@ public class ChooseLevel extends AppCompatActivity {
 
     public void loadLevel7(View view) {
         int id = 7;
-        GameObject current = loadNeededLevel(difficulty, id);
+        current = loadNeededLevel(difficulty, id);
         populateButtons(current);
 
         viewPager.setCurrentItem(CURRRENT_PAGE);
@@ -133,7 +134,7 @@ public class ChooseLevel extends AppCompatActivity {
 
     public void loadLevel8(View view) {
         int id = 8;
-        GameObject current = loadNeededLevel(difficulty, id);
+        current = loadNeededLevel(difficulty, id);
         populateButtons(current);
 
         viewPager.setCurrentItem(CURRRENT_PAGE);
@@ -141,7 +142,7 @@ public class ChooseLevel extends AppCompatActivity {
 
     public void loadLevel9(View view) {
         int id = 9;
-        GameObject current = loadNeededLevel(difficulty, id);
+        current = loadNeededLevel(difficulty, id);
         populateButtons(current);
 
         viewPager.setCurrentItem(CURRRENT_PAGE);
@@ -155,6 +156,10 @@ public class ChooseLevel extends AppCompatActivity {
         GameObject current = loadNeededLevel(difficulty, id);
         populateButtons(current);
         viewPager.setCurrentItem(id);
+    }
+
+    public static int returnId(int id){
+        return id;
     }
 
     public void populateButtons(GameObject game) {

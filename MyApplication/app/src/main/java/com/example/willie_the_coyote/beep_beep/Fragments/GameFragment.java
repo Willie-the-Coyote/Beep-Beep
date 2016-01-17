@@ -38,7 +38,7 @@ public class GameFragment extends Fragment {
 
 
     @TargetApi(Build.VERSION_CODES.JELLY_BEAN)
-    private void generateGrid(int dificulty) {
+    private  void generateGrid(int dificulty) {
         GridLayout grid = (GridLayout) rootView.findViewById(R.id.gridview);
         LinearLayout mainLayout = (LinearLayout) rootView.findViewById(R.id.main_layout);
         grid.setColumnCount(dificulty);
@@ -62,23 +62,22 @@ public class GameFragment extends Fragment {
                 btn.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
-                        //str+= view.getText().toString();
-                        view.getId();
-
                         String w = "";
                         for (int i = 0; i < PushButton.wordCombo.size(); i++) {
                             w += PushButton.wordCombo.get(i).toString();
                         }
                         tvAttempt.setText("");
                         tvAttempt.setText(w);
-                        if (w.equals(ChooseLevel.levels.get(0).Words.get(0))) {
 
-                            for (int i = PushButton.wordCombo.size() - 1; i >= 0; i--) {
-                                PushButton.wordCombo.remove(i);
+                        for (int i = 0; i < ChooseLevel.current.Words.size(); i++) {
+                            if (w.equals(ChooseLevel.current.Words.get(i))) {
+
+                                for (int j = PushButton.wordCombo.size() - 1; j >= 0; j--) {
+                                    PushButton.wordCombo.remove(i);
+                                }
+
+                                tvAttempt.setText("");
                             }
-                            // Intent intent = new Intent(this, ChooseLevel.class);
-                            //startActivity(intent);
-                            tvAttempt.setText("");
                         }
                     }
                 });
