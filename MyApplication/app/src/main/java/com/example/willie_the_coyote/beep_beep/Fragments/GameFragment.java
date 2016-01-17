@@ -38,7 +38,7 @@ public class GameFragment extends Fragment {
 
 
     @TargetApi(Build.VERSION_CODES.JELLY_BEAN)
-    private  void generateGrid(int dificulty) {
+    private  void generateGrid(final int dificulty) {
         GridLayout grid = (GridLayout) rootView.findViewById(R.id.gridview);
         LinearLayout mainLayout = (LinearLayout) rootView.findViewById(R.id.main_layout);
         grid.setColumnCount(dificulty);
@@ -69,15 +69,35 @@ public class GameFragment extends Fragment {
                         tvAttempt.setText("");
                         tvAttempt.setText(w);
 
-                        for (int i = 0; i < ChooseLevel.current.Words.size(); i++) {
-                            if (w.equals(ChooseLevel.current.Words.get(i))) {
+                        switch (dificulty) {
+                            case 2:
+                                if (w.equals(ChooseLevel.current.Words.get(0))) {
 
-                                for (int j = PushButton.wordCombo.size() - 1; j >= 0; j--) {
-                                    PushButton.wordCombo.remove(i);
+                                    for (int j = PushButton.wordCombo.size() - 1; j >= 0; j--) {
+                                        PushButton.wordCombo.remove(j);
+                                    }
+
+                                    tvAttempt.setText("");
                                 }
+                                break;
+                            case 3:
+                                if (w.equals(ChooseLevel.current.Words.get(0)) || w.equals(ChooseLevel.current.Words.get(1))) {
+                                    for (int j = PushButton.wordCombo.size() - 1; j >= 0; j--) {
+                                        PushButton.wordCombo.remove(j);
+                                    }
 
-                                tvAttempt.setText("");
-                            }
+                                    tvAttempt.setText("");
+                                }
+                                break;
+                            case 4:
+                                if (w.equals(ChooseLevel.current.Words.get(0)) || w.equals(ChooseLevel.current.Words.get(1)) || w.equals(ChooseLevel.current.Words.get(2))) {
+                                    for (int j = PushButton.wordCombo.size() - 1; j >= 0; j--) {
+                                        PushButton.wordCombo.remove(j);
+                                    }
+
+                                    tvAttempt.setText("");
+                                }
+                                break;
                         }
                     }
                 });
