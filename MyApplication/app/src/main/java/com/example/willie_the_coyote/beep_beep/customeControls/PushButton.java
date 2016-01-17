@@ -26,6 +26,7 @@ public class PushButton extends Button {
     }
 
     public static ArrayList<String> wordCombo = new ArrayList<String>();
+    public static ArrayList<PushButton> buttonsPressed = new ArrayList<PushButton>();
 
     public static String letter;
 
@@ -39,6 +40,7 @@ public class PushButton extends Button {
                     this.setPressed(false);
                     this.setPressed(false);
                     wordCombo.remove(this.getText().toString());
+                    buttonsPressed.remove(this);
 
                 case MotionEvent.ACTION_UP:
                     return true;
@@ -47,6 +49,7 @@ public class PushButton extends Button {
             switch (event.getActionMasked()) {
                 case MotionEvent.ACTION_DOWN:
                     wordCombo.add(this.getText().toString());
+                    buttonsPressed.add(this);
                     letter = this.getText().toString();
                     this.setPressed(true);
                     this.performClick();

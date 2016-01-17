@@ -1,5 +1,6 @@
 package com.example.willie_the_coyote.beep_beep;
 
+import android.net.Uri;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.content.Intent;
@@ -8,6 +9,7 @@ import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.GridLayout;
 import android.widget.TextView;
 
@@ -15,6 +17,9 @@ import com.example.willie_the_coyote.beep_beep.Fragments.ChooseLevelFragment;
 import com.example.willie_the_coyote.beep_beep.Fragments.GameFragment;
 import com.example.willie_the_coyote.beep_beep.Objects.GameObject;
 import com.example.willie_the_coyote.beep_beep.customeControls.PushButton;
+import com.google.android.gms.appindexing.Action;
+import com.google.android.gms.appindexing.AppIndex;
+import com.google.android.gms.common.api.GoogleApiClient;
 
 import java.lang.reflect.Array;
 import java.util.ArrayList;
@@ -31,35 +36,40 @@ public class ChooseLevel extends AppCompatActivity {
     public static GameObject current;
     public static ArrayList<GameObject> levels = new ArrayList<GameObject>();
 
-    private GameObject game1 = new GameObject(1, new ArrayList<String>(Arrays.asList("S", "T", "A", "L")), new ArrayList<String>(Arrays.asList("SALT")), 2);
-    private GameObject game2 = new GameObject(2, new ArrayList<String>(Arrays.asList("C", "H", "I", "N")), new ArrayList<String>(Arrays.asList("CHIN")), 2);
-    private GameObject game3 = new GameObject(3, new ArrayList<String>(Arrays.asList("S", "T", "A", "L")), new ArrayList<String>(Arrays.asList("SALT")), 2);
-    private GameObject game4 = new GameObject(4, new ArrayList<String>(Arrays.asList("C", "H", "I", "N")), new ArrayList<String>(Arrays.asList("CHIN")), 2);
-    private GameObject game5 = new GameObject(5, new ArrayList<String>(Arrays.asList("S", "T", "A", "L")), new ArrayList<String>(Arrays.asList("SALT")), 2);
-    private GameObject game6 = new GameObject(6, new ArrayList<String>(Arrays.asList("C", "H", "I", "N")), new ArrayList<String>(Arrays.asList("CHIN")), 2);
-    private GameObject game7 = new GameObject(7, new ArrayList<String>(Arrays.asList("S", "T", "A", "L")), new ArrayList<String>(Arrays.asList("SALT")), 2);
-    private GameObject game8 = new GameObject(8, new ArrayList<String>(Arrays.asList("C", "H", "I", "N")), new ArrayList<String>(Arrays.asList("CHIN")), 2);
-    private GameObject game9 = new GameObject(9, new ArrayList<String>(Arrays.asList("S", "T", "A", "L")), new ArrayList<String>(Arrays.asList("SALT")), 2);
+    private GameObject game1 = new GameObject(1, new ArrayList<String>(Arrays.asList("S", "T", "A", "L")), new ArrayList<String>(Arrays.asList("SALT")), new ArrayList<Boolean>(Arrays.asList(false)), 2);
+    private GameObject game2 = new GameObject(2, new ArrayList<String>(Arrays.asList("C", "H", "I", "N")), new ArrayList<String>(Arrays.asList("CHIN")), new ArrayList<Boolean>(Arrays.asList(false)), 2);
+    private GameObject game3 = new GameObject(3, new ArrayList<String>(Arrays.asList("S", "T", "A", "L")), new ArrayList<String>(Arrays.asList("SALT")), new ArrayList<Boolean>(Arrays.asList(false)), 2);
+    private GameObject game4 = new GameObject(4, new ArrayList<String>(Arrays.asList("C", "H", "I", "N")), new ArrayList<String>(Arrays.asList("CHIN")), new ArrayList<Boolean>(Arrays.asList(false)), 2);
+    private GameObject game5 = new GameObject(5, new ArrayList<String>(Arrays.asList("S", "T", "A", "L")), new ArrayList<String>(Arrays.asList("SALT")), new ArrayList<Boolean>(Arrays.asList(false)), 2);
+    private GameObject game6 = new GameObject(6, new ArrayList<String>(Arrays.asList("C", "H", "I", "N")), new ArrayList<String>(Arrays.asList("CHIN")), new ArrayList<Boolean>(Arrays.asList(false)), 2);
+    private GameObject game7 = new GameObject(7, new ArrayList<String>(Arrays.asList("S", "T", "A", "L")), new ArrayList<String>(Arrays.asList("SALT")), new ArrayList<Boolean>(Arrays.asList(false)), 2);
+    private GameObject game8 = new GameObject(8, new ArrayList<String>(Arrays.asList("C", "H", "I", "N")), new ArrayList<String>(Arrays.asList("CHIN")), new ArrayList<Boolean>(Arrays.asList(false)), 2);
+    private GameObject game9 = new GameObject(9, new ArrayList<String>(Arrays.asList("S", "T", "A", "L")), new ArrayList<String>(Arrays.asList("SALT")), new ArrayList<Boolean>(Arrays.asList(false)), 2);
 
-    private GameObject game11 = new GameObject(1, new ArrayList<String>(Arrays.asList("L", "S", "E", "L", "I", "D", "L", "O", "D")), new ArrayList<String>(Arrays.asList("SLIDE", "DOLL")), 3);
-    private GameObject game12 = new GameObject(2, new ArrayList<String>(Arrays.asList("D", "C", "K", "U", "K", "A", "K", "A", "Y")), new ArrayList<String>(Arrays.asList("DUCK", "KAYAK")), 3);
-    private GameObject game13 = new GameObject(3, new ArrayList<String>(Arrays.asList("L", "S", "E", "L", "I", "D", "L", "O", "D")), new ArrayList<String>(Arrays.asList("SLIDE", "DOLL")), 3);
-    private GameObject game14 = new GameObject(4, new ArrayList<String>(Arrays.asList("D", "C", "K", "U", "K", "A", "K", "A", "Y")), new ArrayList<String>(Arrays.asList("DUCK", "KAYAK")), 3);
-    private GameObject game15 = new GameObject(5, new ArrayList<String>(Arrays.asList("L", "S", "E", "L", "I", "D", "L", "O", "D")), new ArrayList<String>(Arrays.asList("SLIDE", "DOLL")), 3);
-    private GameObject game16 = new GameObject(6, new ArrayList<String>(Arrays.asList("D", "C", "K", "U", "K", "A", "K", "A", "Y")), new ArrayList<String>(Arrays.asList("DUCK", "KAYAK")), 3);
-    private GameObject game17 = new GameObject(7, new ArrayList<String>(Arrays.asList("L", "S", "E", "L", "I", "D", "L", "O", "D")), new ArrayList<String>(Arrays.asList("SLIDE", "DOLL")), 3);
-    private GameObject game18 = new GameObject(8, new ArrayList<String>(Arrays.asList("D", "C", "K", "U", "K", "A", "K", "A", "Y")), new ArrayList<String>(Arrays.asList("DUCK", "KAYAK")), 3);
-    private GameObject game19 = new GameObject(9, new ArrayList<String>(Arrays.asList("L", "S", "E", "L", "I", "D", "L", "O", "D")), new ArrayList<String>(Arrays.asList("SLIDE", "DOLL")), 3);
+    private GameObject game11 = new GameObject(1, new ArrayList<String>(Arrays.asList("L", "S", "E", "L", "I", "D", "L", "O", "D")), new ArrayList<String>(Arrays.asList("SLIDE", "DOLL")), new ArrayList<Boolean>(Arrays.asList(false, false)), 3);
+    private GameObject game12 = new GameObject(2, new ArrayList<String>(Arrays.asList("D", "C", "K", "U", "K", "A", "K", "A", "Y")), new ArrayList<String>(Arrays.asList("DUCK", "KAYAK")), new ArrayList<Boolean>(Arrays.asList(false, false)), 3);
+    private GameObject game13 = new GameObject(3, new ArrayList<String>(Arrays.asList("L", "S", "E", "L", "I", "D", "L", "O", "D")), new ArrayList<String>(Arrays.asList("SLIDE", "DOLL")), new ArrayList<Boolean>(Arrays.asList(false, false)), 3);
+    private GameObject game14 = new GameObject(4, new ArrayList<String>(Arrays.asList("D", "C", "K", "U", "K", "A", "K", "A", "Y")), new ArrayList<String>(Arrays.asList("DUCK", "KAYAK")), new ArrayList<Boolean>(Arrays.asList(false, false)), 3);
+    private GameObject game15 = new GameObject(5, new ArrayList<String>(Arrays.asList("L", "S", "E", "L", "I", "D", "L", "O", "D")), new ArrayList<String>(Arrays.asList("SLIDE", "DOLL")), new ArrayList<Boolean>(Arrays.asList(false, false)), 3);
+    private GameObject game16 = new GameObject(6, new ArrayList<String>(Arrays.asList("D", "C", "K", "U", "K", "A", "K", "A", "Y")), new ArrayList<String>(Arrays.asList("DUCK", "KAYAK")), new ArrayList<Boolean>(Arrays.asList(false, false)), 3);
+    private GameObject game17 = new GameObject(7, new ArrayList<String>(Arrays.asList("L", "S", "E", "L", "I", "D", "L", "O", "D")), new ArrayList<String>(Arrays.asList("SLIDE", "DOLL")), new ArrayList<Boolean>(Arrays.asList(false, false)), 3);
+    private GameObject game18 = new GameObject(8, new ArrayList<String>(Arrays.asList("D", "C", "K", "U", "K", "A", "K", "A", "Y")), new ArrayList<String>(Arrays.asList("DUCK", "KAYAK")), new ArrayList<Boolean>(Arrays.asList(false, false)), 3);
+    private GameObject game19 = new GameObject(9, new ArrayList<String>(Arrays.asList("L", "S", "E", "L", "I", "D", "L", "O", "D")), new ArrayList<String>(Arrays.asList("SLIDE", "DOLL")), new ArrayList<Boolean>(Arrays.asList(false, false)), 3);
 
-    private GameObject game21 = new GameObject(1, new ArrayList<String>(Arrays.asList("E", "N", "R", "D", "L", "O", "C", "O", "H", "B", "A", "T", "R", "T", "R", "E")), new ArrayList<String>(Arrays.asList("TABLE", "RECORD", "NORTH")), 4);
-    private GameObject game22 = new GameObject(2, new ArrayList<String>(Arrays.asList("D", "O", "O", "R", "R", "A", "P", "O", "A", "O", "B", "U", "L", "V", "C", "F")), new ArrayList<String>(Arrays.asList("CUPBOARD", "OVAL", "ROOF")), 4);
-    private GameObject game23 = new GameObject(3, new ArrayList<String>(Arrays.asList("E", "N", "R", "D", "L", "O", "C", "O", "H", "B", "A", "T", "R", "T", "R", "E")), new ArrayList<String>(Arrays.asList("TABLE", "RECORD", "NORTH")), 4);
-    private GameObject game24 = new GameObject(4, new ArrayList<String>(Arrays.asList("D", "O", "O", "R", "R", "A", "P", "O", "A", "O", "B", "U", "L", "V", "C", "F")), new ArrayList<String>(Arrays.asList("CUPBOARD", "OVAL", "ROOF")), 4);
-    private GameObject game25 = new GameObject(5, new ArrayList<String>(Arrays.asList("E", "N", "R", "D", "L", "O", "C", "O", "H", "B", "A", "T", "R", "T", "R", "E")), new ArrayList<String>(Arrays.asList("TABLE", "RECORD", "NORTH")), 4);
-    private GameObject game26 = new GameObject(6, new ArrayList<String>(Arrays.asList("D", "O", "O", "R", "R", "A", "P", "O", "A", "O", "B", "U", "L", "V", "C", "F")), new ArrayList<String>(Arrays.asList("CUPBOARD", "OVAL", "ROOF")), 4);
-    private GameObject game27 = new GameObject(7, new ArrayList<String>(Arrays.asList("E", "N", "R", "D", "L", "O", "C", "O", "H", "B", "A", "T", "R", "T", "R", "E")), new ArrayList<String>(Arrays.asList("TABLE", "RECORD", "NORTH")), 4);
-    private GameObject game28 = new GameObject(8, new ArrayList<String>(Arrays.asList("D", "O", "O", "R", "R", "A", "P", "O", "A", "O", "B", "U", "L", "V", "C", "F")), new ArrayList<String>(Arrays.asList("CUPBOARD", "OVAL", "ROOF")), 4);
-    private GameObject game29 = new GameObject(9, new ArrayList<String>(Arrays.asList("E", "N", "R", "D", "L", "O", "C", "O", "H", "B", "A", "T", "R", "T", "R", "E")), new ArrayList<String>(Arrays.asList("TABLE", "RECORD", "NORTH")), 4);
+    private GameObject game21 = new GameObject(1, new ArrayList<String>(Arrays.asList("E", "N", "R", "D", "L", "O", "C", "O", "H", "B", "A", "T", "R", "T", "R", "E")), new ArrayList<String>(Arrays.asList("TABLE", "RECORD", "NORTH")), new ArrayList<Boolean>(Arrays.asList(false, false, false)), 4);
+    private GameObject game22 = new GameObject(2, new ArrayList<String>(Arrays.asList("D", "O", "O", "R", "R", "A", "P", "O", "A", "O", "B", "U", "L", "V", "C", "F")), new ArrayList<String>(Arrays.asList("CUPBOARD", "OVAL", "ROOF")), new ArrayList<Boolean>(Arrays.asList(false, false, false)), 4);
+    private GameObject game23 = new GameObject(3, new ArrayList<String>(Arrays.asList("E", "N", "R", "D", "L", "O", "C", "O", "H", "B", "A", "T", "R", "T", "R", "E")), new ArrayList<String>(Arrays.asList("TABLE", "RECORD", "NORTH")), new ArrayList<Boolean>(Arrays.asList(false, false, false)), 4);
+    private GameObject game24 = new GameObject(4, new ArrayList<String>(Arrays.asList("D", "O", "O", "R", "R", "A", "P", "O", "A", "O", "B", "U", "L", "V", "C", "F")), new ArrayList<String>(Arrays.asList("CUPBOARD", "OVAL", "ROOF")), new ArrayList<Boolean>(Arrays.asList(false, false, false)), 4);
+    private GameObject game25 = new GameObject(5, new ArrayList<String>(Arrays.asList("E", "N", "R", "D", "L", "O", "C", "O", "H", "B", "A", "T", "R", "T", "R", "E")), new ArrayList<String>(Arrays.asList("TABLE", "RECORD", "NORTH")), new ArrayList<Boolean>(Arrays.asList(false, false, false)), 4);
+    private GameObject game26 = new GameObject(6, new ArrayList<String>(Arrays.asList("D", "O", "O", "R", "R", "A", "P", "O", "A", "O", "B", "U", "L", "V", "C", "F")), new ArrayList<String>(Arrays.asList("CUPBOARD", "OVAL", "ROOF")), new ArrayList<Boolean>(Arrays.asList(false, false, false)), 4);
+    private GameObject game27 = new GameObject(7, new ArrayList<String>(Arrays.asList("E", "N", "R", "D", "L", "O", "C", "O", "H", "B", "A", "T", "R", "T", "R", "E")), new ArrayList<String>(Arrays.asList("TABLE", "RECORD", "NORTH")), new ArrayList<Boolean>(Arrays.asList(false, false, false)), 4);
+    private GameObject game28 = new GameObject(8, new ArrayList<String>(Arrays.asList("D", "O", "O", "R", "R", "A", "P", "O", "A", "O", "B", "U", "L", "V", "C", "F")), new ArrayList<String>(Arrays.asList("CUPBOARD", "OVAL", "ROOF")), new ArrayList<Boolean>(Arrays.asList(false, false, false)), 4);
+    private GameObject game29 = new GameObject(9, new ArrayList<String>(Arrays.asList("E", "N", "R", "D", "L", "O", "C", "O", "H", "B", "A", "T", "R", "T", "R", "E")), new ArrayList<String>(Arrays.asList("TABLE", "RECORD", "NORTH")), new ArrayList<Boolean>(Arrays.asList(false, false, false)), 4);
+    /**
+     * ATTENTION: This was auto-generated to implement the App Indexing API.
+     * See https://g.co/AppIndexing/AndroidStudio for more information.
+     */
+    private GoogleApiClient client;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -74,6 +84,9 @@ public class ChooseLevel extends AppCompatActivity {
         viewPager = (ViewPager) this.findViewById(R.id.vp_choose_level);
         adapter = new ChooseLevelAdapter(this.getSupportFragmentManager());
         viewPager.setAdapter(adapter);
+        // ATTENTION: This was auto-generated to implement the App Indexing API.
+        // See https://g.co/AppIndexing/AndroidStudio for more information.
+        client = new GoogleApiClient.Builder(this).addApi(AppIndex.API).build();
     }
 
     public void loadLevel1(View view) {
@@ -148,19 +161,13 @@ public class ChooseLevel extends AppCompatActivity {
         viewPager.setCurrentItem(CURRRENT_PAGE);
     }
 
-    //public GameObject current;
-    public void loadLevel(View view) {
-        int id = 0;
-        //String id = view.getResources().getResourceName(view.getId());
-        //int numberLevel = Integer.parseInt(R.id.);
-        GameObject current = loadNeededLevel(difficulty, id);
-        populateButtons(current);
-        viewPager.setCurrentItem(id);
+
+    public void loadLevel(GameObject game) {
+        game = loadNeededLevel(game.Dificulty, game.Level);
+        populateButtons(game);
+        viewPager.setCurrentItem(CURRRENT_PAGE);
     }
 
-    public static int returnId(int id){
-        return id;
-    }
 
     public void populateButtons(GameObject game) {
         for (int i = 0; i < game.Letters.size(); i++) {
@@ -180,6 +187,46 @@ public class ChooseLevel extends AppCompatActivity {
         }
 
         return current;
+    }
+
+    @Override
+    public void onStart() {
+        super.onStart();
+
+        // ATTENTION: This was auto-generated to implement the App Indexing API.
+        // See https://g.co/AppIndexing/AndroidStudio for more information.
+        client.connect();
+        Action viewAction = Action.newAction(
+                Action.TYPE_VIEW, // TODO: choose an action type.
+                "ChooseLevel Page", // TODO: Define a title for the content shown.
+                // TODO: If you have web page content that matches this app activity's content,
+                // make sure this auto-generated web page URL is correct.
+                // Otherwise, set the URL to null.
+                Uri.parse("http://host/path"),
+                // TODO: Make sure this auto-generated app deep link URI is correct.
+                Uri.parse("android-app://com.example.willie_the_coyote.beep_beep/http/host/path")
+        );
+        AppIndex.AppIndexApi.start(client, viewAction);
+    }
+
+    @Override
+    public void onStop() {
+        super.onStop();
+
+        // ATTENTION: This was auto-generated to implement the App Indexing API.
+        // See https://g.co/AppIndexing/AndroidStudio for more information.
+        Action viewAction = Action.newAction(
+                Action.TYPE_VIEW, // TODO: choose an action type.
+                "ChooseLevel Page", // TODO: Define a title for the content shown.
+                // TODO: If you have web page content that matches this app activity's content,
+                // make sure this auto-generated web page URL is correct.
+                // Otherwise, set the URL to null.
+                Uri.parse("http://host/path"),
+                // TODO: Make sure this auto-generated app deep link URI is correct.
+                Uri.parse("android-app://com.example.willie_the_coyote.beep_beep/http/host/path")
+        );
+        AppIndex.AppIndexApi.end(client, viewAction);
+        client.disconnect();
     }
 
     private class ChooseLevelAdapter extends FragmentPagerAdapter {
@@ -209,5 +256,7 @@ public class ChooseLevel extends AppCompatActivity {
         public int getCount() {
             return 10;
         }
+
+
     }
 }
