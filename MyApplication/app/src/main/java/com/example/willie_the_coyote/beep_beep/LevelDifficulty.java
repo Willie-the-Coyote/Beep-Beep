@@ -44,16 +44,19 @@ public class LevelDifficulty extends AppCompatActivity {
         attachDifficultyInfo("5");
     }
 
+    public void loadAboutPage(View view) {
+        ImageButton arrow = (ImageButton)findViewById(R.id.arrow_button_about);
+        Animation animation1 = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.clockwise);
+        arrow.startAnimation(animation1);
+        Intent intent;
+        intent = new Intent(this, About.class);
+        startActivity(intent);
+    }
+
     public void attachDifficultyInfo(String difficulty) {
         Intent intent;
         intent = new Intent(this, ChooseLevel.class);
         intent.putExtra("diff", difficulty);
         startActivity(intent);
-    }
-
-    public void loadAboutPage(View view) {
-        ImageButton arrow = (ImageButton)findViewById(R.id.arrow_button_about);
-        Animation animation1 = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.clockwise);
-        arrow.startAnimation(animation1);
     }
 }
