@@ -4,10 +4,11 @@ import java.util.ArrayList;
 
 public class GameObject{
 
-    public GameObject(int level, ArrayList<String> letters, ArrayList<String> words, int difficulty){
+    public GameObject(int level, ArrayList<String> letters, ArrayList<String> words, ArrayList<Boolean> guessedWords, int difficulty){
         this.Level = level;
         this.Letters = letters;
         this.Words = words;
+        this.guessedWords = guessedWords;
         this.Dificulty = difficulty;
 
     }
@@ -37,6 +38,16 @@ public class GameObject{
 
     public void setWords(ArrayList<String> words) {
         Words = words;
+    }
+
+    public ArrayList<Boolean> guessedWords;
+
+    public ArrayList<Boolean> getGuessedWords() {
+        return guessedWords;
+    }
+
+    public void setGuessedWords(ArrayList<Boolean> guessedWords) {
+        this.guessedWords = guessedWords;
     }
 
     public int Dificulty;
