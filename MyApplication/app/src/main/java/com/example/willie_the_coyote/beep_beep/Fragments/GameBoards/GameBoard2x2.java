@@ -20,7 +20,7 @@
 //
 //public class GameBoard2x2 extends Fragment {
 //
-//    private PushButton button1;
+//    private PushButton start_button;
 //    private PushButton button2;
 //    private PushButton button3;
 //    private PushButton button4;
@@ -37,7 +37,7 @@
 //    public View onCreateView(LayoutInflater inflater, ViewGroup container,
 //                             Bundle savedInstanceState) {
 //        // Inflate the layout for this fragment
-////        button1 = (PushButton) getActivity().findViewById(R.id.Tile1);
+////        start_button = (PushButton) getActivity().findViewById(R.id.Tile1);
 ////        button2 = (PushButton) getActivity().findViewById(R.id.Tile2);
 ////        button3 = (PushButton) getActivity().findViewById(R.id.Tile3);
 ////        button4 = (PushButton) getActivity().findViewById(R.id.Tile4);
@@ -65,7 +65,7 @@
 //        games.add(game9);
 //        games.add(game10);
 //
-//        button1.setText(games.get(0).getLetter1());
+//        start_button.setText(games.get(0).getLetter1());
 //        button2.setText(games.get(0).getLetter2());
 //        button3.setText(games.get(0).getLetter3());
 //        button4.setText(games.get(0).getLetter4());
@@ -74,7 +74,7 @@
 //        GridLayout grid = (GridLayout)  getView().findViewById(R.id.gridview);
 //        // listener = getTouchListener();
 //
-////        button1.setOnTouchListener(listener);
+////        start_button.setOnTouchListener(listener);
 ////        button2.setOnTouchListener(listener);
 ////        button3.setOnTouchListener(listener);
 ////        button4.setOnTouchListener(listener);

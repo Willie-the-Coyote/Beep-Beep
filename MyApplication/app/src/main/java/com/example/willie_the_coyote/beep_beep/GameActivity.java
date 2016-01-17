@@ -23,7 +23,7 @@
 //
 ////    private void onGameLoad() {
 ////        for(int i= 0; i < games.size(); i++){
-////            button1.setText(games.get(i).getLetter1());
+////            start_button.setText(games.get(i).getLetter1());
 ////            button2.setText(games.get(i).getLetter2());
 ////            button3.setText(games.get(i).getLetter3());
 ////            button4.setText(games.get(i).getLetter4());
@@ -37,8 +37,8 @@
 ////            public boolean onTouch(View v, MotionEvent event) {
 ////                switch (event.getAction()) {
 ////                    case MotionEvent.ACTION_DOWN:
-////                        if (button1.isPressed()) {
-////                            button1.setPressed(true);
+////                        if (start_button.isPressed()) {
+////                            start_button.setPressed(true);
 ////                        } else if (button2.isPressed()) {
 ////                            button2.setPressed(true);
 ////                        } else if (button3.isPressed()) {
@@ -49,8 +49,8 @@
 ////                        return true;
 ////
 ////                    case MotionEvent.ACTION_MOVE:
-////                        if (button1.isPressed()) {
-////                            button1.setPressed(true);
+////                        if (start_button.isPressed()) {
+////                            start_button.setPressed(true);
 ////                        } else if (button2.isPressed()) {
 ////                            button2.setPressed(true);
 ////                        } else if (button3.isPressed()) {

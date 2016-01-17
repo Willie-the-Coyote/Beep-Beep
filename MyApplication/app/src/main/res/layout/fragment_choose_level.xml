@@ -33,7 +33,7 @@
 
         <LinearLayout style="@style/LevelsLayout">
             <ImageButton
-                android:id="@+id/button1"
+                android:id="@+id/start_button"
                 android:src="@drawable/box0"
                 style="@style/LevelButtons"
                 android:onClick="loadLevel1"
