@@ -59,8 +59,6 @@ public class GameFragment extends Fragment {
             for (int col = 0; col < dificulty; col++) {
                 btn = new PushButton(getActivity());
                 btn.setBackground(getActivity().getResources().getDrawable(R.drawable.tile));
-                btn.setWidth(100);
-                btn.setHeight(100);
                 btn.setId(index);
                 btn.setText("");
                 btn.setOnClickListener(new View.OnClickListener() {
