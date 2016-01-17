@@ -17,28 +17,33 @@
         android:orientation="vertical">
 
         <ImageButton
+            android:id="@+id/arrow_button_2x2"
             style="@style/ArrowButtons"
             android:onClick="loadChooseLevel2x2"
             android:src="@drawable/tabela1" />
 
         <ImageButton
+            android:id="@+id/arrow_button_3x3"
             style="@style/ArrowButtons"
             android:onClick="loadChooseLevel3x3"
             android:src="@drawable/tabela2" />
 
         <ImageButton
+            android:id="@+id/arrow_button_4x4"
             style="@style/ArrowButtons"
             android:onClick="loadChooseLevel4x4"
             android:src="@drawable/tablela3" />
 
         <ImageButton
+            android:id="@+id/arrow_button_5x5"
             style="@style/ArrowButtons"
             android:onClick="loadChooseLevel5x5"
             android:src="@drawable/tabela4" />
 
         <ImageButton
+            android:id="@+id/arrow_button_about"
             style="@style/ArrowButtons"
-            android:onClick="loadChooseLevel"
+            android:onClick="loadAboutPage"
             android:src="@drawable/tabela5" />
     </LinearLayout>
 </RelativeLayout>
