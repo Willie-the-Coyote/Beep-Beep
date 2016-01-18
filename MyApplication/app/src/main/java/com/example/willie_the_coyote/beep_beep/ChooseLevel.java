@@ -1,5 +1,10 @@
 package com.example.willie_the_coyote.beep_beep;
 
+import android.content.Context;
+import android.hardware.Sensor;
+import android.hardware.SensorEvent;
+import android.hardware.SensorEventListener;
+import android.hardware.SensorManager;
 import android.net.Uri;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
@@ -12,6 +17,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.GridLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.willie_the_coyote.beep_beep.Data.GameLevels;
 import com.example.willie_the_coyote.beep_beep.Fragments.ChooseLevelFragment;
@@ -26,10 +32,9 @@ import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Arrays;
 
-public class ChooseLevel extends AppCompatActivity {
+public class ChooseLevel extends AppCompatActivity implements SensorEventListener {
     public static final String DIFICULTY_LEVEL = "DificultyLevel";
     public static final int CURRRENT_PAGE = 1;
-
 
     private int difficulty;
     private ViewPager viewPager;
@@ -42,6 +47,14 @@ public class ChooseLevel extends AppCompatActivity {
      * See https://g.co/AppIndexing/AndroidStudio for more information.
      */
     private GoogleApiClient client;
+
+    private long lastUpdate = 0;
+    private float last_x, last_y, last_z;
+    private static final int SHAKE_THRESHOLD = 600;
+
+    private SensorManager senSensorManager;
+    private Sensor senAccelerometer;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -60,6 +73,8 @@ public class ChooseLevel extends AppCompatActivity {
         // ATTENTION: This was auto-generated to implement the App Indexing API.
         // See https://g.co/AppIndexing/AndroidStudio for more information.
         client = new GoogleApiClient.Builder(this).addApi(AppIndex.API).build();
+
+        setupSensor();
     }
 
     public void loadLevel1(View view) {
@@ -209,6 +224,44 @@ public class ChooseLevel extends AppCompatActivity {
         client.disconnect();
     }
 
+    @Override
+    public void onSensorChanged(SensorEvent sensorEvent) {
+        Sensor mySensor = sensorEvent.sensor;
+
+        if (mySensor.getType() == Sensor.TYPE_ACCELEROMETER) {
+            float x = sensorEvent.values[0];
+            float y = sensorEvent.values[1];
+            float z = sensorEvent.values[2];
+
+            long curTime = System.currentTimeMillis();
+
+            if ((curTime - lastUpdate) > 100) {
+                long diffTime = (curTime - lastUpdate);
+                lastUpdate = curTime;
+
+                float speed = Math.abs(x + y + z - last_x - last_y - last_z) / diffTime * 10000;
+
+                if (speed > SHAKE_THRESHOLD) {
+                    String message = "";
+
+                    for (int i = 0; i < current.Words.size(); i++) {
+                       message += current.Words.get(i) + " ";
+                    }
+                    Toast.makeText(this, message, Toast.LENGTH_SHORT).show();
+                }
+
+                last_x = x;
+                last_y = y;
+                last_z = z;
+            }
+        }
+    }
+
+    @Override
+    public void onAccuracyChanged(Sensor sensor, int accuracy) {
+
+    }
+
     private class ChooseLevelAdapter extends FragmentPagerAdapter {
         public ChooseLevelAdapter(FragmentManager fm) {
             super(fm);
@@ -236,7 +289,11 @@ public class ChooseLevel extends AppCompatActivity {
         public int getCount() {
             return 10;
         }
+    }
 
-
+    public void setupSensor(){
+        senSensorManager = (SensorManager) getSystemService(Context.SENSOR_SERVICE);
+        senAccelerometer = senSensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER);
+        senSensorManager.registerListener(this, senAccelerometer, SensorManager.SENSOR_DELAY_NORMAL);
     }
 }
