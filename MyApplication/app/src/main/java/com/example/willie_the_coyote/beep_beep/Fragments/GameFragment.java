@@ -49,7 +49,7 @@ public class GameFragment extends Fragment {
         buttons = new ArrayList<PushButton>();
 
         tvAttempt = new TextView(getActivity());
-        tvAttempt.setBackgroundColor(0xfff00000);
+        tvAttempt.setTextSize(30);
         tvAttempt.setText("");
         mainLayout.addView(tvAttempt);
 

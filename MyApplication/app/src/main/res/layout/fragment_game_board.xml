@@ -19,21 +19,20 @@
         android:orientation="vertical"
         tools:context=".Fragments.GameBoards.GameBoard2x2">
 
+
+        <TextView
+            android:id="@+id/tv_wordAttempt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:editable="true"
+            android:gravity="top" />
+
         <GridLayout
             android:id="@+id/gridview"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
             android:layout_centerVertical="true" />
-
-
-        <TextView
-            android:id="@+id/tv_wordAttempt"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="@android:color/holo_purple"
-            android:editable="true"
-            android:gravity="bottom" />
 
         <LinearLayout
             android:id="@+id/guess_word"
