@@ -50,7 +50,7 @@ public class ChooseLevel extends AppCompatActivity implements SensorEventListene
 
     private long lastUpdate = 0;
     private float last_x, last_y, last_z;
-    private static final int SHAKE_THRESHOLD = 600;
+    private static final int SHAKE_THRESHOLD = 800;
 
     private SensorManager senSensorManager;
     private Sensor senAccelerometer;

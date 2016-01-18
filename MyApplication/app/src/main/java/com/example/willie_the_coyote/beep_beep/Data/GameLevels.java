@@ -132,7 +132,7 @@ public class GameLevels {
             new ArrayList<Boolean>(Arrays.asList(false, false, false, false)), 5);
     private GameObject game34 = new GameObject(4,
             new ArrayList<String>(Arrays.asList("V", "A", "N", "M", "O", "I", "P", "V", "E", "O", "T", "O", "A", "R", "R", "T", "S", "M", "E","D", "M","I","I", "P","B")),
-            new ArrayList<String>(Arrays.asList("STOP","BEDROOM","VAMPIRE","VITAMINE")),
+            new ArrayList<String>(Arrays.asList("STOP","BEDROOM","VAMPIRE","VITAMIN")),
             new ArrayList<Boolean>(Arrays.asList(false, false, false, false)), 5);
     private GameObject game35 = new GameObject(5,
             new ArrayList<String>(Arrays.asList("P", "E", "S", "O", "C", "L", "T", "P", "C", "Y", "L", "U", "T", "N", "E", "B", "R", "L", "P","I","U","S","E", "T","A")),

@@ -153,6 +153,38 @@ public class GameFragment extends Fragment {
                                     }
                                 }
                                 break;
+                            case 5: if (w.equals(ChooseLevel.current.Words.get(0))
+                                    || w.equals(ChooseLevel.current.Words.get(1))
+                                    || w.equals(ChooseLevel.current.Words.get(2))
+                                    || w.equals(ChooseLevel.current.Words.get(3))) {
+                                for (int j = PushButton.wordCombo.size() - 1; j >= 0; j--) {
+                                    PushButton.wordCombo.remove(j);
+                                }
+
+                                for (int b = 0; b < grid.getChildCount(); b++) {
+                                    if (grid.getChildAt(b).isPressed()) {
+                                        grid.getChildAt(b).setVisibility(View.GONE);
+                                    }
+                                }
+                                int ind = ChooseLevel.current.Words.indexOf(w);
+                                ChooseLevel.current.guessedWords.set(ind, true);
+                                tvAttempt.setText("");
+                            }
+
+                                if (ChooseLevel.current.guessedWords.get(0)
+                                        && ChooseLevel.current.guessedWords.get(1)
+                                        && ChooseLevel.current.guessedWords.get(2)
+                                        && ChooseLevel.current.guessedWords.get(3)) {
+                                    if (ChooseLevel.current.Level < 9) {
+                                        Intent intent = new Intent(getActivity(), ChooseLevel.class);
+                                        intent.putExtra("diff", "5");
+                                        startActivity(intent);
+                                    } else {
+                                        Intent intent = new Intent(getActivity(), LevelDifficulty.class);
+                                        startActivity(intent);
+                                    }
+                                }
+                                break;
                         }
                     }
                 });
